@@ -1,9 +1,19 @@
 ---
 
+- name: install necessary python packages
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - docker
+    - jsondiff
+
 
 - include_tasks:
-    file: tasks/sub-tasks/setup-swarm-cluster.yml
+    file: tasks/sub-tasks/deploy.yml
+  when: swarm_stacks_action == "deploy"
 
 
 - include_tasks:
-    file: tasks/sub-tasks/setup-swarm-labels.yml
+    file: tasks/sub-tasks/rm.yml
+  when: swarm_stacks_action == "rm"

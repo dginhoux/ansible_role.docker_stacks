@@ -1,0 +1,10 @@
+---
+
+- name: stop stacks
+  community.docker.docker_stack:
+    name: "{{ stack.name }}"
+    state: absent
+  loop: "{{ swarm_stacks_list | flatten }}"
+  loop_control:
+    loop_var: stack
+  run_once: yes
