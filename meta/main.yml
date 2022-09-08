@@ -1,7 +1,7 @@
 ---
 
 galaxy_info:
-  role_name: ginhouxnet.docker_stacks
+  role_name: docker_stacks
   description: manage swarm stacks
   author: dginhoux
   company: ginhouxnet
