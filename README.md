@@ -1,4 +1,4 @@
-ginhouxnet.docker_stacks
+Ansible Role : dginhoux.docker_stacks
 =========
 
 This ansible role deploy swarm stacks
