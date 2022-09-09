@@ -1,7 +1,7 @@
 ginhouxnet.docker_stacks
 =========
 
-This ansible role manage swarm stack
+This ansible role deploy swarm stacks
 
 
 Requirements
