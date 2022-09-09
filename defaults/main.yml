@@ -1,8 +1,6 @@
 ---
-
 swarm_stacks_action: deploy
 # swarm_stacks_action: rm
-
 
 swarm_stacks_list:
   - name: registry-cache
@@ -11,7 +9,6 @@ swarm_stacks_list:
   - name: registry-build
     state: present
     compose: /mnt/gfs_lv_swarm_registry/registry-stack/registry-build/docker-compose.yml
-
 
 swarm_overlay_networks_list:
   - auth-public

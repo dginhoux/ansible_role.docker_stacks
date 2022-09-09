@@ -1,5 +1,4 @@
 ---
-
 - name: install necessary python packages
   pip:
     name: "{{ item }}"
@@ -8,12 +7,12 @@
     - docker
     - jsondiff
 
-
-- include_tasks:
-    file: tasks/sub-tasks/deploy.yml
+- name: include deploy tasks
+  include_tasks:
+    file: tasks/sub-tasks/stacks_deploy.yml
   when: swarm_stacks_action == "deploy"
 
-
-- include_tasks:
-    file: tasks/sub-tasks/rm.yml
+- name: include rm tasks
+  include_tasks:
+    file: tasks/sub-tasks/stacks_rm.yml
   when: swarm_stacks_action == "rm"

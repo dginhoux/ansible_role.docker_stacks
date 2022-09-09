@@ -1,5 +1,4 @@
 ---
-
 galaxy_info:
   role_name: docker_stacks
   description: manage swarm stacks
@@ -26,6 +25,5 @@ galaxy_info:
     - docker
     - swarm
     - stacks
-
 
 dependencies: []
