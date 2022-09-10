@@ -15,7 +15,7 @@
     name: "{{ stack.name }}"
     compose: "{{ stack.compose }}"
     state: "{{ stack.state }}"
-    prune: "yes"
+    prune: true
   loop: "{{ swarm_stacks_list | flatten }}"
   loop_control:
     loop_var: stack

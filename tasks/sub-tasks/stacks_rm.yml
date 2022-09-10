@@ -7,4 +7,4 @@
   loop: "{{ swarm_stacks_list | flatten }}"
   loop_control:
     loop_var: stack
-  run_once: yes
+  run_once: true
