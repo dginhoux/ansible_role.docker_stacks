@@ -1,8 +1,7 @@
 ---
 galaxy_info:
   role_name: docker_stacks
-  description: |
-    This ansible role deploy swarm stacks
+  description: dginhoux.docker_stacks
   author: Dany GINHOUX
   company: dginhoux
   license: MIT

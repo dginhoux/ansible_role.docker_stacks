@@ -1,5 +1,6 @@
 ---
 swarm_stacks_action: deploy
+## rm value is used to force remove all stacks listed in the following list
 # swarm_stacks_action: rm
 
 swarm_stacks_list:
