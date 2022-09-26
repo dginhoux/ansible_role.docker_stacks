@@ -1,7 +1,8 @@
 ---
 galaxy_info:
   role_name: docker_stacks
-  description: manage swarm stacks
+  description: |
+    This ansible role deploy swarm stacks
   author: Dany GINHOUX
   company: dginhoux
   license: MIT
