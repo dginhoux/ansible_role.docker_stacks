@@ -8,6 +8,8 @@
   loop: "{{ swarm_overlay_networks_list | flatten }}"
   loop_control:
     loop_var: network
+    label:
+      - "{{ network }}"
   run_once: true
 
 - name: deploy stacks
@@ -19,4 +21,7 @@
   loop: "{{ swarm_stacks_list | flatten }}"
   loop_control:
     loop_var: stack
+    label:
+      - "{{ stack.name }}"
+      - "{{ stack.state }}"
   run_once: true
