@@ -1,5 +1,5 @@
 ---
-- name: create overlay networks
+- name: Create overlay networks
   community.docker.docker_network:
     name: "{{ network }}"
     state: present
@@ -12,7 +12,7 @@
       - "{{ network }}"
   run_once: true
 
-- name: deploy stacks
+- name: Deploy stacks
   community.docker.docker_stack:
     name: "{{ stack.name }}"
     compose: "{{ stack.compose }}"

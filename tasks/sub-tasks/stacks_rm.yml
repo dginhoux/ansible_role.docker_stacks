@@ -1,6 +1,6 @@
 ---
 
-- name: stop stacks
+- name: Stop stacks
   community.docker.docker_stack:
     name: "{{ stack.name }}"
     state: absent

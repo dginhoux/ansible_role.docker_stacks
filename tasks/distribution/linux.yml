@@ -1,5 +1,5 @@
 ---
-- name: install necessary python packages
+- name: Install necessary python packages
   ansible.builtin.pip:
     name: "{{ item }}"
     state: present
@@ -7,12 +7,12 @@
     - docker
     - jsondiff
 
-- name: include deploy tasks
+- name: Include deploy tasks
   ansible.builtin.include_tasks:
     file: tasks/sub-tasks/stacks_deploy.yml
   when: swarm_stacks_action == "deploy"
 
-- name: include rm tasks
+- name: Include rm tasks
   ansible.builtin.include_tasks:
     file: tasks/sub-tasks/stacks_rm.yml
   when: swarm_stacks_action == "rm"
