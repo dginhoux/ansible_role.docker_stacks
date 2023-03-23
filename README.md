@@ -19,7 +19,7 @@ This behaviour can be bypassed by settings the following variable `asserts_bypas
 | Platform | Versions |
 |----------|----------|
 | Debian | buster, bullseye |
-| Fedora | 33, 34, 35, 36 |
+| Fedora | 33, 34, 35, 36, 37 |
 | EL | 7, 8 |
 
 #### ANSIBLE VERSION
@@ -79,17 +79,18 @@ swarm_stacks_list:
     compose: /mnt/gfs_lv_swarm_registry/registry-stack/registry-build/docker-compose.yml
 
 swarm_overlay_networks_list:
-  - auth-public
-  - ingress-public
-  - log-public
-  - mail-public
-  - monitoring-public
-  - mysql-public
-  - postgres-public
-  - redis-public
-  - rp-public
-  - supervision-public
-  - socket-public
+  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: auth-public }
+  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: ingress-public }
+  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: log-public }
+  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: mail-public }
+  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: monitoring-public }
+  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: mysql-public }
+  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: postgres-public }
+  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: redis-public }
+  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: rp-public }
+  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: supervision-public }
+  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: socket-public }
+
 ```
 
 #### DEFAULT OS SPECIFIC VARIABLES

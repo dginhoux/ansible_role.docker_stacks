@@ -1,10 +1,14 @@
 ---
 - name: Create overlay networks
   community.docker.docker_network:
-    name: "{{ network }}"
-    state: present
-    scope: swarm
-    driver: overlay
+    name: "{{ network.name }}"
+    state: "{{ network.state }}"
+    scope: "{{ network.scope }}"
+    driver: "{{ network.driver }}"
+    internal: "{{ network.internal | default(false) }}"
+    attachable: "{{ network.attachable | default(false) }}"
+    enable_ipv6: "{{ network.attachable | default(false) }}"
+    force: "{{ network.attachable | default(false) }}"
   loop: "{{ swarm_overlay_networks_list | flatten }}"
   loop_control:
     loop_var: network
