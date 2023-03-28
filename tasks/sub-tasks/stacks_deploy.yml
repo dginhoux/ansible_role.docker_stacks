@@ -9,6 +9,11 @@
     attachable: "{{ network.attachable | default(false) }}"
     enable_ipv6: "{{ network.attachable | default(false) }}"
     force: "{{ network.attachable | default(false) }}"
+    labels: "{{ network.labels | default(omit) }}"
+    ipam_config: "{{ network.ipam_config | default(omit) }}"
+    ipam_driver: "{{ network.ipam_driver | default(omit) }}"
+    ipam_driver_options: "{{ network.ipam_driver_options | default(omit) }}"
+    driver_options: "{{ network.driver_options | default(omit) }}"
   loop: "{{ swarm_overlay_networks_list | flatten }}"
   loop_control:
     loop_var: network

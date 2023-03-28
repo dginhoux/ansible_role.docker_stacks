@@ -12,14 +12,32 @@ swarm_stacks_list:
     compose: /mnt/gfs_lv_swarm_registry/registry-stack/registry-build/docker-compose.yml
 
 swarm_overlay_networks_list:
-  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: auth-public }
-  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: ingress-public }
-  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: log-public }
-  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: mail-public }
-  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: monitoring-public }
-  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: mysql-public }
-  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: postgres-public }
-  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: redis-public }
-  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: rp-public }
-  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: supervision-public }
-  - { state: present, force: false, scope: swarm, driver: overlay, enable_ipv6: false, attachable: false, internal: false, name: socket-public }
+  - name: test1
+    state: present
+    force: false
+    scope: swarm
+    driver: overlay
+    enable_ipv6: false
+    attachable: false
+    internal: false
+    # labels: 
+    # ipam_config: 
+    # ipam_driver: 
+    # ipam_driver_options: 
+    driver_options:
+      com.docker.network.bridge.name: test1
+
+  - name: test2
+    state: present
+    force: false
+    scope: swarm
+    driver: overlay
+    enable_ipv6: false
+    attachable: false
+    internal: false
+    # labels: 
+    # ipam_config: 
+    # ipam_driver: 
+    # ipam_driver_options:
+    driver_options:
+      com.docker.network.bridge.name: test2
