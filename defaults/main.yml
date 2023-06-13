@@ -20,10 +20,10 @@ swarm_overlay_networks_list:
     enable_ipv6: false
     attachable: false
     internal: false
-    # labels: 
-    # ipam_config: 
-    # ipam_driver: 
-    # ipam_driver_options: 
+    # labels:
+    # ipam_config:
+    # ipam_driver:
+    # ipam_driver_options:
     driver_options:
       com.docker.network.bridge.name: test1
 
@@ -35,9 +35,9 @@ swarm_overlay_networks_list:
     enable_ipv6: false
     attachable: false
     internal: false
-    # labels: 
-    # ipam_config: 
-    # ipam_driver: 
+    # labels:
+    # ipam_config:
+    # ipam_driver:
     # ipam_driver_options:
     driver_options:
       com.docker.network.bridge.name: test2
