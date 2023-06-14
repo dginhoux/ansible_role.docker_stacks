@@ -1,5 +1,5 @@
 ---
-- name: Create overlay networks
+- name: Deploy overlay networks
   community.docker.docker_network:
     name: "{{ network.name }}"
     state: "{{ network.state }}"
@@ -17,8 +17,7 @@
   loop: "{{ swarm_overlay_networks_list | flatten }}"
   loop_control:
     loop_var: network
-    label:
-      - "{{ network }}"
+    label: "name:{{ network.name }}, state:{{ network.state }}"
   run_once: true
 
 - name: Deploy stacks
@@ -30,7 +29,5 @@
   loop: "{{ swarm_stacks_list | flatten }}"
   loop_control:
     loop_var: stack
-    label:
-      - "{{ stack.name }}"
-      - "{{ stack.state }}"
+    label: "name:{{ stack.name }}, state:{{ stack.state }}"
   run_once: true
