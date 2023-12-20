@@ -49,7 +49,7 @@ git clone https://github.com/dginhoux/ansible_role.docker_stacks dginhoux.docker
 
 ```yaml
 - hosts: all
-  roles:
+  tasks:
     - name: start role dginhoux.docker_stacks
       ansible.builtin.include_role:
         name: dginhoux.docker_stacks
@@ -60,7 +60,9 @@ git clone https://github.com/dginhoux/ansible_role.docker_stacks dginhoux.docker
 
 #### DEFAULT VARIABLES
 
-Defaults variables defined in `defaults/main.yml` : 
+Defaults variables defined in `defaults/main.yml`
+
+#### EXAMPLES VARIABLES
 
 ```yaml
 swarm_stacks_action: deploy
