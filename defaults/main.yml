@@ -3,41 +3,43 @@ swarm_stacks_action: deploy
 ## rm value is used to force remove all stacks listed in the following list
 # swarm_stacks_action: rm
 
-swarm_stacks_list:
-  - name: registry-cache
-    state: present
-    compose: /mnt/gfs_lv_swarm_registry/registry-stack/registry-cache/docker-compose.yml
-  - name: registry-build
-    state: present
-    compose: /mnt/gfs_lv_swarm_registry/registry-stack/registry-build/docker-compose.yml
+swarm_stacks_list: []
+# swarm_stacks_list:
+#   - name: registry-cache
+#     state: present
+#     compose: /mnt/gfs_lv_swarm_registry/registry-stack/registry-cache/docker-compose.yml
+#   - name: registry-build
+#     state: present
+#     compose: /mnt/gfs_lv_swarm_registry/registry-stack/registry-build/docker-compose.yml
 
-swarm_overlay_networks_list:
-  - name: test1
-    state: present
-    force: false
-    scope: swarm
-    driver: overlay
-    enable_ipv6: false
-    attachable: false
-    internal: false
-    # labels:
-    # ipam_config:
-    # ipam_driver:
-    # ipam_driver_options:
-    driver_options:
-      com.docker.network.bridge.name: test1
+swarm_overlay_networks_list: []
+# swarm_overlay_networks_list:
+#   - name: test1
+#     state: present
+#     force: false
+#     scope: swarm
+#     driver: overlay
+#     enable_ipv6: false
+#     attachable: false
+#     internal: false
+#     # labels:
+#     # ipam_config:
+#     # ipam_driver:
+#     # ipam_driver_options:
+#     driver_options:
+#       com.docker.network.bridge.name: test1
 
-  - name: test2
-    state: present
-    force: false
-    scope: swarm
-    driver: overlay
-    enable_ipv6: false
-    attachable: false
-    internal: false
-    # labels:
-    # ipam_config:
-    # ipam_driver:
-    # ipam_driver_options:
-    driver_options:
-      com.docker.network.bridge.name: test2
+#   - name: test2
+#     state: present
+#     force: false
+#     scope: swarm
+#     driver: overlay
+#     enable_ipv6: false
+#     attachable: false
+#     internal: false
+#     # labels:
+#     # ipam_config:
+#     # ipam_driver:
+#     # ipam_driver_options:
+#     driver_options:
+#       com.docker.network.bridge.name: test2
