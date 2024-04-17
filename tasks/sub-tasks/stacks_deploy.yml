@@ -26,6 +26,7 @@
     compose: "{{ stack.compose }}"
     state: "{{ stack.state }}"
     prune: true
+    resolve_image: always
   loop: "{{ swarm_stacks_list | flatten }}"
   loop_control:
     loop_var: stack
