@@ -1,13 +1,13 @@
 ---
-- name: Install necessary python packages
-  tags:
-    - install
-  ansible.builtin.pip:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - docker
-    - jsondiff
+# - name: Install necessary python packages
+#   tags:
+#     - install
+#   ansible.builtin.pip:
+#     name: "{{ item }}"
+#     state: present
+#   with_items:
+#     - docker
+#     - jsondiff
 
 - name: Include deploy tasks
   tags:
