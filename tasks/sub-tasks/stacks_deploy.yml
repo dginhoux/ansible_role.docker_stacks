@@ -24,6 +24,7 @@
   community.docker.docker_stack:
     name: "{{ stack.name }}"
     compose: "{{ stack.compose }}"
+    # detach: false
     state: "{{ stack.state }}"
     prune: true
     resolve_image: always
