@@ -7,18 +7,21 @@
     driver: "{{ network.driver }}"
     internal: "{{ network.internal | default(false) }}"
     attachable: "{{ network.attachable | default(false) }}"
-    enable_ipv6: "{{ network.attachable | default(false) }}"
-    force: "{{ network.attachable | default(false) }}"
+    enable_ipv6: "{{ network.enable_ipv6 | default(false) }}"
+    force: "{{ network.force | default(false) }}"
     labels: "{{ network.labels | default(omit) }}"
     ipam_config: "{{ network.ipam_config | default(omit) }}"
     ipam_driver: "{{ network.ipam_driver | default(omit) }}"
     ipam_driver_options: "{{ network.ipam_driver_options | default(omit) }}"
     driver_options: "{{ network.driver_options | default(omit) }}"
+    # appends: true
+    # force: true
   loop: "{{ swarm_overlay_networks_list | flatten }}"
   loop_control:
     loop_var: network
     label: "name:{{ network.name }}, state:{{ network.state }}"
   run_once: true
+  ignore_errors: true
 
 - name: Deploy stacks
   community.docker.docker_stack:
